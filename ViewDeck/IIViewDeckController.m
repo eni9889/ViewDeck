@@ -2143,7 +2143,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
         if (!result) return result;
     }
 
-    if ([[touch view] isKindOfClass:[UISlider class]])
+    if ([[touch view] isKindOfClass:[UISlider class]] || [[[[touch view] class] description] hasPrefix:@"UITableViewCell"])
         return NO;
 
     _panOrigin = self.slidingControllerView.frame.origin;
